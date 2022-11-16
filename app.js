@@ -47,14 +47,16 @@ listeAction.push(new Action ("fermeture"))
 let myFunction = {
     prevision : function Prevision(){
         prix_total = clients[clients.length-1].nuit * prixJournalier
-        console.log(prix_total)
         if(clients[i].dejeuner = "true"){
             prix_total+prixDejeuner * clients[i].nuit
         }else {prix_total}
       
         console.log(`le paiement à la fin du séjour sera de ${prix_total} €`)
+        
     
     },
+    
+ 
 
     welcome : function Welcome (){
         console.log(`bienvenue à l'hotel Mr ou Mme ${clients[clients.length-1].nom} ${clients[clients.length-1].prenom}`)
@@ -88,14 +90,21 @@ do{
                                 inputDejeuner
                                 inputDejeuner == "oui" ?  newClient.dejeuner = "true": newClient.dejeuner = "false"
                                 clients.push(newClient)
-                
+                                
                                 myFunction.prevision()
-                                myFunction.welcome()
-                         
-                           
-                
-                            
-                
+
+                                rl.question('confirmer votre séjour ? \n', answer=>{
+                                    answer
+                                    if(answer == "oui"){
+                                        myFunction.welcome()
+                                        rl.close()
+
+                                    }else if(answer == "non"){
+                                        console.log('annulation')
+                                        rl.close()
+                                    }
+                                })
+
                             })
                 
                         })
@@ -103,13 +112,7 @@ do{
                     })
                 
                 })
-               
-              
-              
-                    
-               
-               
-            
+
         
             }else{
                 console.log('Vous etes arrivé trop tôt. revenez à partir de 15h')
