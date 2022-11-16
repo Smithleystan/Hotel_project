@@ -2,7 +2,7 @@ const readline = require('readline')
 const {stdin:input, stdout: output} = require('process')
 const rl = readline.createInterface(input, output)
 
-
+//https://askcodez.com/comment-faire-pour-automatiser-le-commit-et-push-git.html
 
 
 
@@ -24,9 +24,7 @@ function Client(nom, prenom, nuit, dejeuner){
     this.dejeuner = dejeuner
 }
 
-let newClient
-
-
+let newClien
 clients.push( new Client ("Garcia", "jose", 8, true))
 clients.push( new Client ("De Caunes", "Antoine", 2, true))
 
