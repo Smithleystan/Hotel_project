@@ -62,14 +62,6 @@ let myFunction = {
 
 }
 
-
-
-
-
-
-
-
-
 do{
 
     rl.question('arrivee ou depart  \n', answer =>{
