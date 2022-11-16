@@ -1,10 +1,10 @@
 git add .
 
-echo 'Enter le message du commit :'
-read commitMessage
+echo "saisissez le message de commit"
+read messageCommit
 
-git commit -m "$commitMessage"
+git commit -m "$messageCommit"
 
-git push 
+git push
 
 read
