@@ -63,6 +63,7 @@ let myFunction = {
 }
 
 do{
+    
 
     rl.question('arrivee ou depart  \n', answer =>{
         while(answer != listeAction[i].action){
