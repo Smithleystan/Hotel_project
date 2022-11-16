@@ -101,6 +101,7 @@ do{
 
                                     }else if(answer == "non"){
                                         console.log('annulation')
+                                        
                                         rl.close()
                                     }
                                 })
