@@ -29,14 +29,15 @@ clients.push( new Client ("De Caunes", "Antoine", 2, true))
 
 
 
-function Action(action){
+function Action(numero, action){
+    this.numero = numero
     this.action = action
 }
 
 let listeAction = []
-listeAction.push(new Action ("arrivee"))
-listeAction.push(new Action ("depart"))
-listeAction.push(new Action ("fermeture"))
+listeAction.push(new Action ("1","arrivee"))
+listeAction.push(new Action ("2","depart"))
+listeAction.push(new Action ("3","fermeture"))
 
 
 //function
