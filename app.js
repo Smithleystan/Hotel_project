@@ -62,11 +62,13 @@ let myFunction = {
 
 }
 
+
+
 do{
     
 
-    rl.question('arrivee ou depart  \n', answer =>{
-        while(answer != listeAction[i].action){
+    rl.question('1 arrivee  ou 2 depart  \n', answer =>{
+        while(answer != listeAction[i].numero){
                 i++
         }
         if(listeAction[i].action == listeAction[0].action){
