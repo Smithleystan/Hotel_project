@@ -4,7 +4,6 @@ const rl = readline.createInterface(input, output)
 
 //https://askcodez.com/comment-faire-pour-automatiser-le-commit-et-push-git.html
 
-iuiuguguoiguo
 
 let getHour = 16
 let minArrivee = 15
@@ -83,7 +82,8 @@ do{
                                 clients.push(newClient)
                                 
                                 myFunction.prevision()
-
+                                
+                             
                                 rl.question('confirmer votre séjour ? \n', answer=>{
                                     answer
                                     if(answer == "oui"){
@@ -93,6 +93,7 @@ do{
                                     }else if(answer == "non"){
                                         console.log('annulation')
                                         clients.pop()
+                                       
                                         
                                         rl.close()
                                     }
