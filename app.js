@@ -92,6 +92,7 @@ do{
 
                                     }else if(answer == "non"){
                                         console.log('annulation')
+                                        clients.pop()
                                         
                                         rl.close()
                                     }
