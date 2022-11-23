@@ -1,4 +1,6 @@
 
+
+
 let getHour = 16
 let minArrivee = 15
 let i = 0
@@ -10,11 +12,13 @@ let prixJournalier = 65
 
 let clients = []
 
-function Client(nom, prenom, nuit, dejeuner) {
-    this.nom = nom
-    this.prenom = prenom
-    this.nuit = nuit
-    this.dejeuner = dejeuner
+class Client {
+    constructor(nom, prenom, nuit, dejeuner) {
+        this.nom = nom
+        this.prenom = prenom
+        this.nuit = nuit
+        this.dejeuner = dejeuner
+    }
 }
 
 
@@ -23,10 +27,11 @@ clients.push(new Client("De Caunes", "Antoine", 2, true))
 
 
 
-function Action(numero, action) {
+class Action{
+    constructor(numero, action) {
     this.numero = numero
     this.action = action
-}
+}}
 
 let listeAction = []
 listeAction.push(new Action("1", "arrivee"))
@@ -36,27 +41,28 @@ listeAction.push(new Action("3", "fermeture"))
 
 //function
 
-let myFunction = {
-    prevision: function Prevision(nbNuit, dejeuner) {
-        prix_total = nbNuit * prixJournalier
-        console.log(dejeuner)
-        if (dejeuner == "true") {
-            prix_total = prix_total + prixDejeuner * nbNuit
-        } else { prix_total }
-        console.log(prix_total)
+function Prevision(nbNuit, dejeuner) {
+    prix_total = nbNuit * prixJournalier
+    console.log(dejeuner)
+    if (dejeuner == "true") {
+        prix_total = prix_total + prixDejeuner * nbNuit
+    } else { prix_total }
+    console.log(prix_total)
 
-        alert(`le paiement à la fin du séjour sera de ${prix_total} €`)
-
-
-    },
+    alert(`le paiement à la fin du séjour sera de ${prix_total} €`)
 
 
-
-    welcome: function Welcome() {
-        alert(`bienvenue à l'hotel Mr ou Mme ${clients[clients.length - 1].nom} ${clients[clients.length - 1].prenom}`)
-    }
 
 }
+
+
+function welcome(non, prenom) {
+    alert(`bienvenue à l'hotel Mr ou Mme ${non} ${prenom}`)
+}
+[clients.length - 1].prenom
+
+
+
 
 let answer = window.prompt('1 arrivee ou 2 depart')
 let tab = listeAction.find(action => action.numero === answer)
@@ -72,22 +78,24 @@ if (numero == 1) {
         let inputDejeuner = window.prompt('voulez vous déjeuner  ?')
 
         inputDejeuner === "oui" ? inputDejeuner = "true" : inputDejeuner = "false"
-        
 
 
-        myFunction.prevision(Number(inputNuit), inputDejeuner)
+
+        Prevision(Number(inputNuit), inputDejeuner)
 
         let answer = window.prompt('confirmer votre séjour')
         answer
 
         if (answer == "oui") {
-            myFunction.welcome()
+
             clients.push(new Client(inputNom, inputPrenom, inputNuit, inputDejeuner))
-            console.log(clients) 
+            welcome(inputNom, inputPrenom)
+            console.log(clients)
 
         } else if (answer == "non") {
             console.log('annulation')
-           
+            console.log(clients)
+
 
 
 
@@ -112,8 +120,10 @@ if (numero == 1) {
     } else { prix_total }
 
     alert(`le montant à payer est de ${prix_total} € `)
-    let newTab = clients.filter(client => client.nom == nom && client.prenom == prenom)
+    let newTab = clients.filter(client => client.nom !== nom && client.prenom !== prenom)
     clients = newTab
+    console.log(clients)
 
 
 }
+
